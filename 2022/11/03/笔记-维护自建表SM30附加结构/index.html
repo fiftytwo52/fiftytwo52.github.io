@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="场景某些自建表,会需要用户手动修改内容的,视情况需要加上附加字段,记录用户变更创建的信息.如果是程序控制的自建表增删查改(自定义领料单程序)还好,这些信息都可以通过程序控制,同时维护自建表.但是如果用户通过SM30维护数据呢. 前期准备  自建表,创建表维护.    参考下面的结构,在自建表后面引用这些字段.     设置SM30不允许用户维护这些字段    点击SM30内部的系统,状态,屏幕号,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/11/03/%E7%AC%94%E8%AE%B0-%E7%BB%B4%E6%8A%A4%E8%87%AA%E5%BB%BA%E8%A1%A8SM30%E9%99%84%E5%8A%A0%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="场景某些自建表,会需要用户手动修改内容的,视情况需要加上附加字段,记录用户变更创建的信息.如果是程序控制的自建表增删查改(自定义领料单程序)还好,这些信息都可以通过程序控制,同时维护自建表.但是如果用户通过SM30维护数据呢. 前期准备  自建表,创建表维护.    参考下面的结构,在自建表后面引用这些字段.     设置SM30不允许用户维护这些字段    点击SM30内部的系统,状态,屏幕号,">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028110139167.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028110908892.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028111603438.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028152952507.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028114319660.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028130320803.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028152633768.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028160408559.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028161323654.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028163546506.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028163756079.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028163833772.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028164716992.png">
+<meta property="og:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028173047220.png">
+<meta property="article:published_time" content="2022-11-03T09:53:21.434Z">
+<meta property="article:modified_time" content="2022-10-28T09:34:30.729Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028110139167.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-笔记-维护自建表SM30附加结构" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/03/%E7%AC%94%E8%AE%B0-%E7%BB%B4%E6%8A%A4%E8%87%AA%E5%BB%BA%E8%A1%A8SM30%E9%99%84%E5%8A%A0%E7%BB%93%E6%9E%84/" class="article-date">
+  <time class="dt-published" datetime="2022-11-03T09:53:21.434Z" itemprop="datePublished">2022-11-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h4><p>某些自建表,会需要用户手动修改内容的,视情况需要加上附加字段,记录用户变更创建的信息.如果是程序控制的自建表增删查改(自定义领料单程序)还好,这些信息都可以通过程序控制,同时维护自建表.但是如果用户通过SM30维护数据呢.</p>
+<h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><blockquote>
+<ol>
+<li>自建表,创建表维护.</li>
+</ol>
+<p>  参考下面的结构,在自建表后面引用这些字段.</p>
+<p>  <img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028110139167.png" alt="image-20221028110139167"></p>
+<ol start="2">
+<li>设置SM30不允许用户维护这些字段</li>
+</ol>
+<p>  点击SM30内部的系统,状态,屏幕号,进入屏幕逻辑流</p>
+<p>  <img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028110908892.png" alt="image-20221028110908892"></p>
+<p>  点击布局进入屏幕绘制窗口,编辑我们附加的结构,改为不可编辑.</p>
+<p>  <img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028111603438.png" alt="image-20221028111603438"></p>
+<p>  如果不生效的话.清空修改选项.</p>
+<p>  <img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028152952507.png" alt="image-20221028152952507"></p>
+<ol start="3">
+<li>SM30增加屏幕流逻辑,自动填充附加逻辑</li>
+</ol>
+<p>  逻辑流新增行,创建include文件</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MODULE frm_create_ts ON CHAIN-INPUT.</span><br><span class="line">MODULE frm_change_ts ON CHAIN-INPUT.</span><br></pre></td></tr></table></figure>
+
+<p>  <img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028114319660.png" alt="image-20221028114319660"></p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">*&amp;---------------------------------------------------------------------*</span><br><span class="line">*&amp;      Module  FRM_CREATE_TS  INPUT</span><br><span class="line">*&amp;---------------------------------------------------------------------*</span><br><span class="line">*       text</span><br><span class="line">*----------------------------------------------------------------------*</span><br><span class="line">MODULE frm_create_ts INPUT.</span><br><span class="line">  IF ztpp001-erdat &lt; &#x27;19700101&#x27;.</span><br><span class="line">*    AND ztdynpro_attr-ertim IS INITIAL</span><br><span class="line">*    AND ztdynpro_attr-ernam IS INITIAL.</span><br><span class="line">    ztpp001-erdat = sy-datum.</span><br><span class="line">    ztpp001-ertim = sy-uzeit.</span><br><span class="line">    ztpp001-ernam = sy-uname.</span><br><span class="line">  ENDIF.</span><br><span class="line">ENDMODULE.</span><br><span class="line">*&amp;---------------------------------------------------------------------*</span><br><span class="line">*&amp;      Module  FRM_CHANGE_TS  INPUT</span><br><span class="line">*&amp;---------------------------------------------------------------------*</span><br><span class="line">*       text</span><br><span class="line">*----------------------------------------------------------------------*</span><br><span class="line">MODULE frm_change_ts INPUT.</span><br><span class="line">  ztpp001-aedat = sy-datum.</span><br><span class="line">  ztpp001-aetim = sy-uzeit.</span><br><span class="line">  ztpp001-aenam = sy-uname.</span><br><span class="line">ENDMODULE.</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h4><p><img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028130320803.png" alt="image-20221028130320803"></p>
+<p>新建一行,回车</p>
+<p><img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028152633768.png" alt="image-20221028152633768"></p>
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><h5 id="表维护事件-自动带出字段信息"><a href="#表维护事件-自动带出字段信息" class="headerlink" title="表维护事件-自动带出字段信息"></a>表维护事件-自动带出字段信息</h5><ol>
+<li><p>编辑模式,进入表维护生成器</p>
+<p><img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028160408559.png" alt="image-20221028160408559"></p>
+</li>
+</ol>
+<p>新建条目选择05,添加子例程,点击编辑器进入函数组对应的include文件</p>
+<p><img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028161323654.png" alt="image-20221028161323654"></p>
+<p>书写相关代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">*&amp;---------------------------------------------------------------------*</span><br><span class="line">*&amp;      Module  FRM_CHANGE_TS  INPUT</span><br><span class="line">*&amp;---------------------------------------------------------------------*</span><br><span class="line">*       text</span><br><span class="line">*----------------------------------------------------------------------*</span><br><span class="line">FORM frm_getmatkx.</span><br><span class="line">  SELECT SINGLE</span><br><span class="line">    makt~maktx</span><br><span class="line">    FROM makt</span><br><span class="line">    INTO ztpp001-maktx1</span><br><span class="line">    WHERE matnr = ztpp001-matnr1</span><br><span class="line">    AND spras = sy-langu.</span><br><span class="line"></span><br><span class="line">ENDFORM.</span><br></pre></td></tr></table></figure>
+
+<p>注意:这种法子只能用于创建,事件编号的描述也说明了是在建立新的条目的时候产生.理论上来讲,最好应该是回车事件和保存事件后触发并回写.但是目前没有实现这个功能.</p>
+<p>已知事件01是保存事件,过代码,但是没回写成功.可以考虑作为保存校验使用</p>
+<p>已知事件05是新增事件,过代码,回写成功</p>
+<p>能通过事件,成功在保存或回车后回写物料描述的,可以戳我补充.</p>
+<h5 id="屏幕事件-自动带出字段信息"><a href="#屏幕事件-自动带出字段信息" class="headerlink" title="屏幕事件-自动带出字段信息"></a>屏幕事件-自动带出字段信息</h5><p>进入屏幕逻辑流,增加一个module</p>
+<p><img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028163546506.png" alt="image-20221028163546506"></p>
+<p>代码如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">*&amp;---------------------------------------------------------------------*</span><br><span class="line">*&amp;      Module  FRM_GETMAKTX  INPUT</span><br><span class="line">*&amp;---------------------------------------------------------------------*</span><br><span class="line">*       text</span><br><span class="line">*----------------------------------------------------------------------*</span><br><span class="line">MODULE frm_getmaktx INPUT.</span><br><span class="line">  SELECT SINGLE</span><br><span class="line">    makt~maktx</span><br><span class="line">    FROM makt</span><br><span class="line">    INTO ztpp001-maktx1</span><br><span class="line">    WHERE matnr = ztpp001-matnr1</span><br><span class="line">    AND spras = sy-langu.</span><br><span class="line">ENDMODULE.</span><br></pre></td></tr></table></figure>
+
+<p>此时,在输入一个新的物料号之后,回车会带出物料描述,可以认为是回车事件.</p>
+<p><img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028163756079.png" alt="image-20221028163756079"></p>
+<p>物料改为C000031,回车</p>
+<p><img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028163833772.png" alt="image-20221028163833772"></p>
+<p>成功修改物料描述</p>
+<p>同理,此处也可以做一些其他的功能,例如搜索帮助.</p>
+<h5 id="屏幕事件-搜索帮助"><a href="#屏幕事件-搜索帮助" class="headerlink" title="屏幕事件-搜索帮助"></a>屏幕事件-搜索帮助</h5><p>如果se11表结构中,已经有了搜索帮助,那么在sm30中,也是能直接使用的.</p>
+<p>在屏幕流里面添加代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PROCESS ON VALUE-REQUEST.</span><br><span class="line">  FIELD ztpp001-lgort MODULE frm_lgorthelp.</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028164716992.png" alt="image-20221028164716992"></p>
+<p>module就是咱常见的屏幕搜索帮助代码了.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line">*&amp;---------------------------------------------------------------------*</span><br><span class="line">*&amp;      Module  FRM_LGORTHELP  INPUT</span><br><span class="line">*&amp;---------------------------------------------------------------------*</span><br><span class="line">*       text</span><br><span class="line">*----------------------------------------------------------------------*</span><br><span class="line">MODULE frm_lgorthelp INPUT.</span><br><span class="line">  DATA: lt_dynpfields TYPE STANDARD TABLE OF dynpread,</span><br><span class="line">        ls_dynpfields TYPE dynpread,</span><br><span class="line">        lt_return     TYPE STANDARD TABLE OF ddshretval,</span><br><span class="line">        ls_return     TYPE ddshretval,</span><br><span class="line">        lv_povstepl   TYPE sy-stepl,</span><br><span class="line">        lv_index      TYPE sy-stepl.</span><br><span class="line"></span><br><span class="line">* 获取本页当前行号</span><br><span class="line">  CALL FUNCTION &#x27;DYNP_GET_STEPL&#x27;</span><br><span class="line">    IMPORTING</span><br><span class="line">      povstepl        = lv_povstepl</span><br><span class="line">    EXCEPTIONS</span><br><span class="line">      stepl_not_found = 1.</span><br><span class="line"></span><br><span class="line">* 当前行号 = TC(包括翻页)的首行行号 + 本页当前行号 - 1</span><br><span class="line">  lv_index = tctrl_ztpp001-top_line + lv_povstepl - 1.</span><br><span class="line"></span><br><span class="line">  &quot;获取工厂</span><br><span class="line">  CLEAR lt_dynpfields[].</span><br><span class="line">  ls_dynpfields-fieldname = &#x27;ZTPP001-WERKS&#x27;.</span><br><span class="line">  ls_dynpfields-stepl     = lv_index.</span><br><span class="line">  APPEND ls_dynpfields TO lt_dynpfields.</span><br><span class="line">  CLEAR ls_dynpfields.</span><br><span class="line"></span><br><span class="line">* 获取屏幕值（以防用户修改后未按回车）</span><br><span class="line">  CALL FUNCTION &#x27;DYNP_VALUES_READ&#x27;</span><br><span class="line">    EXPORTING</span><br><span class="line">      dyname               = sy-repid</span><br><span class="line">      dynumb               = sy-dynnr</span><br><span class="line">      translate_to_upper   = &#x27;X&#x27;</span><br><span class="line">    TABLES</span><br><span class="line">      dynpfields           = lt_dynpfields</span><br><span class="line">    EXCEPTIONS</span><br><span class="line">      invalid_abapworkarea = 1</span><br><span class="line">      invalid_dynprofield  = 2</span><br><span class="line">      invalid_dynproname   = 3</span><br><span class="line">      invalid_dynpronummer = 4</span><br><span class="line">      invalid_request      = 5</span><br><span class="line">      no_fielddescription  = 6</span><br><span class="line">      invalid_parameter    = 7</span><br><span class="line">      undefind_error       = 8</span><br><span class="line">      double_conversion    = 9</span><br><span class="line">      stepl_not_found      = 10</span><br><span class="line">      OTHERS               = 11.</span><br><span class="line">  READ TABLE lt_dynpfields INTO ls_dynpfields INDEX 1.</span><br><span class="line">  IF sy-subrc = 0.</span><br><span class="line">    DATA(lv_werks) = ls_dynpfields-fieldvalue.</span><br><span class="line">  ENDIF.</span><br><span class="line"></span><br><span class="line">  &quot;获取物料</span><br><span class="line">  CLEAR lt_dynpfields[].</span><br><span class="line">  ls_dynpfields-fieldname = &#x27;ZTPP001-MATNR1&#x27;.</span><br><span class="line">  ls_dynpfields-stepl     = lv_index.</span><br><span class="line">  APPEND ls_dynpfields TO lt_dynpfields.</span><br><span class="line">  CLEAR ls_dynpfields.</span><br><span class="line"></span><br><span class="line">* 获取屏幕值（以防用户修改后未按回车）</span><br><span class="line">  CALL FUNCTION &#x27;DYNP_VALUES_READ&#x27;</span><br><span class="line">    EXPORTING</span><br><span class="line">      dyname               = sy-repid</span><br><span class="line">      dynumb               = sy-dynnr</span><br><span class="line">      translate_to_upper   = &#x27;X&#x27;</span><br><span class="line">    TABLES</span><br><span class="line">      dynpfields           = lt_dynpfields</span><br><span class="line">    EXCEPTIONS</span><br><span class="line">      invalid_abapworkarea = 1</span><br><span class="line">      invalid_dynprofield  = 2</span><br><span class="line">      invalid_dynproname   = 3</span><br><span class="line">      invalid_dynpronummer = 4</span><br><span class="line">      invalid_request      = 5</span><br><span class="line">      no_fielddescription  = 6</span><br><span class="line">      invalid_parameter    = 7</span><br><span class="line">      undefind_error       = 8</span><br><span class="line">      double_conversion    = 9</span><br><span class="line">      stepl_not_found      = 10</span><br><span class="line">      OTHERS               = 11.</span><br><span class="line">  READ TABLE lt_dynpfields INTO ls_dynpfields INDEX 1.</span><br><span class="line">  IF sy-subrc = 0.</span><br><span class="line">    DATA(lv_matnr) = ls_dynpfields-fieldvalue.</span><br><span class="line">  ENDIF.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  DATA:lt_lgort TYPE TABLE OF ty_ztpp001lgort,</span><br><span class="line">       ls_lgort TYPE ty_ztpp001lgort.</span><br><span class="line">  SELECT</span><br><span class="line">    mard~matnr,</span><br><span class="line">    mard~werks,</span><br><span class="line">    mard~lgort,</span><br><span class="line">    t001l~lgobe</span><br><span class="line">    FROM mard</span><br><span class="line">    LEFT JOIN t001l ON mard~werks = t001l~werks</span><br><span class="line">                    AND mard~lgort = t001l~lgort</span><br><span class="line">    WHERE matnr = @lv_matnr</span><br><span class="line">    AND mard~werks = @lv_werks</span><br><span class="line">    INTO CORRESPONDING FIELDS OF TABLE @lt_lgort.</span><br><span class="line"></span><br><span class="line">  SORT lt_lgort BY matnr werks lgort.</span><br><span class="line"></span><br><span class="line">  CALL FUNCTION &#x27;F4IF_INT_TABLE_VALUE_REQUEST&#x27;</span><br><span class="line">    EXPORTING</span><br><span class="line">      retfield        = &#x27;LGORT&#x27;</span><br><span class="line">      dynpprog        = sy-repid</span><br><span class="line">      dynpnr          = sy-dynnr</span><br><span class="line">      dynprofield     = &#x27;LGORT&#x27;</span><br><span class="line">      value_org       = &#x27;S&#x27;</span><br><span class="line">    TABLES</span><br><span class="line">      value_tab       = lt_lgort</span><br><span class="line">    EXCEPTIONS</span><br><span class="line">      parameter_error = 1</span><br><span class="line">      no_values_found = 2</span><br><span class="line">      OTHERS          = 3.</span><br><span class="line">  IF sy-subrc &lt;&gt; 0.</span><br><span class="line">*   Implement suitable error handling here</span><br><span class="line">  ENDIF.</span><br><span class="line"></span><br><span class="line">ENDMODULE.</span><br></pre></td></tr></table></figure>
+
+<p>参考结构写在了函数组的全局变量里面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">TYPES:BEGIN OF ty_ztpp001lgort,&quot;搜索帮助结构</span><br><span class="line">        matnr TYPE matnr, &quot;物料</span><br><span class="line">        werks TYPE werks_d, &quot;工厂</span><br><span class="line">        lgort TYPE lgort_d, &quot;库存地点</span><br><span class="line">        lgobe TYPE lgobe, &quot;仓储地点的描述</span><br><span class="line">      END OF ty_ztpp001lgort.</span><br></pre></td></tr></table></figure>
+
+<p>效果</p>
+<p><img src="https://gitee.com/Kevin20210402/abap/raw/master/image/image-20221028173047220.png" alt="image-20221028173047220"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/03/%E7%AC%94%E8%AE%B0-%E7%BB%B4%E6%8A%A4%E8%87%AA%E5%BB%BA%E8%A1%A8SM30%E9%99%84%E5%8A%A0%E7%BB%93%E6%9E%84/" data-id="cla0w4rdy000050mz6t9wcgai" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/11/03/MMPV%E8%87%AA%E5%8A%A8%E8%BF%87%E8%B4%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/03/%E7%AC%94%E8%AE%B0-%E7%BB%B4%E6%8A%A4%E8%87%AA%E5%BB%BA%E8%A1%A8SM30%E9%99%84%E5%8A%A0%E7%BB%93%E6%9E%84/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/03/MMPV%E8%87%AA%E5%8A%A8%E8%BF%87%E8%B4%A6/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/03/ztest-0001/">ztest_0001</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/03/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
